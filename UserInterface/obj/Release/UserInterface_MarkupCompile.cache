@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\sidharth\Desktop\TravelAgency-CIS560\UserInterface\obj\Debug\
+C:\Users\sidharth\Desktop\TravelAgency-CIS560\UserInterface\obj\Release\
 UserInterface
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\sidharth\Desktop\TravelAgency-CIS560\UserInterface\App.xaml
 6-899855153
 
@@ -16,5 +16,5 @@ C:\Users\sidharth\Desktop\TravelAgency-CIS560\UserInterface\App.xaml
 13-1505183044
 MainMenu.xaml;MainWindow.xaml;NewAgentScreen.xaml;NewCustomerScreen.xaml;PlanTripScreen.xaml;TripSetupScreen.xaml;
 
-False
+True
 

@@ -36,6 +36,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C#\DataDelegates\AttractionsDelegates\CreateAttractionDelegate.cs" />
     <Compile Include="C#\DataDelegates\AttractionsDelegates\GetAttractionDataDelegate.cs" />
     <Compile Include="C#\Model\Attraction.cs" />
     <Compile Include="C#\Model\AttractionTicket.cs" />
