@@ -23,7 +23,7 @@ namespace DataModeling
 
             while (reader.Read())
             {
-                rows.Add($"{reader.GetDateTime("Month").ToString("C", CultureInfo.CurrentCulture)}," +
+                rows.Add($"{reader.GetInt32("Month").ToString("C", CultureInfo.CurrentCulture)}," +
                     $" {reader.GetInt32("NumberOfTrips")}, " +
                     $"{reader.GetDouble("AverageCustomersPerAgent").ToString("C", CultureInfo.CurrentCulture)}, " +
                     $"{reader.GetDouble("TotalSale").ToString("C", CultureInfo.CurrentCulture)} ");

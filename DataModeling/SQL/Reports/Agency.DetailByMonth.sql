@@ -1,14 +1,12 @@
---USE TravelAgency;
---GO
 CREATE OR ALTER PROC Agency.DetailByMonth
 AS
 SELECT
-	MONTH(T.DateCreated) As Month , COUNT(DISTINCT T.TripID) As NumberOfTrips,
-    COUNT(AC.CustomerID)/ COUNT(AA.AgentID) AS AverageCustomersPerAgent,
-    Sum(AC.Budget) AS TotalSale
+	MONTH(T.DateCreated) As [Month] , COUNT(DISTINCT T.TripID) As NumberOfTrips,
+    CAST(COUNT(AC.CustomerID)/ COUNT(AA.AgentID) AS FLOAT) AS AverageCustomersPerAgent,
+    SUM(AC.Budget) AS TotalSale
 FROM Agency.Agents AA 
-Left JOIN  Agency.Trips T ON T.AgentID = AA.AgentID
-Left JOIN Agency.Customer AC ON AC.CustomerID = T.CustomerID
-GROUP BY  Month(T.DateCreated)
-ORDER BY  Month(T.DateCreated) DESC
+LEFT JOIN  Agency.Trips T ON T.AgentID = AA.AgentID
+LEFT JOIN Agency.Customer AC ON AC.CustomerID = T.CustomerID
+GROUP BY  MONTH(T.DateCreated)
+ORDER BY  MONTH(T.DateCreated) DESC
 

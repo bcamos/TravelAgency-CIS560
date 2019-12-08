@@ -63,10 +63,6 @@ namespace UserInterface
                     uxReportList.Items.Add(t);
                 }
             }
-            // CONNECT
-            // query report 1
-            // load report 1 into uxReportList
-            // set uxReportListLabel of what each column represents
         }
 
         public void Report2_Click(object sender, RoutedEventArgs args)

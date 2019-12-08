@@ -39,7 +39,7 @@
                 </Style>
             </StackPanel.Resources>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Click="Report1_Click">Report 1</Button>
+                <Button Click="Report1_Click">Monthly Report</Button>
                 <Button Click="Report2_Click">Report 2</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

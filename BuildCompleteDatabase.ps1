@@ -131,6 +131,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeli
 Write-Host "Creating Report procedures..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Reports\Agency.CheapestOptions.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Reports\Agency.AgeReport.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Reports\Agency.DetailByMonth.sql"
 
 Write-Host "Build completed."
 Write-Host ""
