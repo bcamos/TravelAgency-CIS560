@@ -173,7 +173,8 @@
     <Content Include="SQL\Reports\Agency.AgeReport.sql" />
     <Content Include="SQL\Reports\Agency.CheapestOptions.sql" />
     <Content Include="SQL\Reports\Agency.DetailByMonth.sql" />
-    <Content Include="SQL\Reports\ReportQuery2.CheapestOptions.sql" />
+    <Content Include="SQL\Reports\Agency..sql" />
+    <Content Include="SQL\Reports\Agency.TopTenAttractions.sql" />
     <Content Include="SQL\Schemas\All Schemas.sql" />
     <Content Include="SQL\Tables\AgencyTables\Agents.sql" />
     <Content Include="SQL\Tables\AgencyTables\ContactInfo.sql" />

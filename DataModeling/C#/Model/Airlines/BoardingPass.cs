@@ -8,10 +8,19 @@ namespace DataModeling.Model
 {
     public class BoardingPass : IReservation
     {
+        /// <summary>
+        /// reservation id of boardingpass
+        /// </summary>
         public int ReservationID { get; }
 
+        /// <summary>
+        /// id of flight
+        /// </summary>
         public int FlightID { get; }
 
+        /// <summary>
+        /// price of ticket
+        /// </summary>
         public double Price { get;  }
 
         public BoardingPass(int reservationID, int flightID, double price)
