@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using DataAccess;
+using System.Globalization;
 
 namespace DataModeling
 {
@@ -23,7 +24,7 @@ namespace DataModeling
             {
                 rows.Add($"{reader.GetInt32("AttractionID")}, {reader.GetString("Name")}, " +
                     $"{reader.GetInt32("NumberOfCustomers")}, {reader.GetString("CityName")}, " +
-                    $"{reader.GetString("Country")}, {reader.GetDouble("Price")}");
+                    $"{reader.GetString("Country")}, {reader.GetDouble("Price").ToString("C", CultureInfo.CurrentCulture)}");
             }
 
             return rows;

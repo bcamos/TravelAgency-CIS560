@@ -91,13 +91,20 @@ namespace UserInterface
 
             List<string> ageGroups = (List<string>)executor.ExecuteReader(new AgencyAgeReportDelegate());
 
-            uxReportListLabel.Content = "AgeGroup - Count, Average Budget, Lowest Budget - Highest Budget, Average Age, Trip Count";
+            uxReportListLabel.Content = $"{Check.Format("Age Group", 12, true)}{Check.Format("Customers", 10, true)}" +
+                $"{Check.Format("Ave. Budget", 13, true)}{Check.Format("Low. Budget",13,true)}" +
+                $"{Check.Format("High. Budget",13,true)}{Check.Format("Ave. Age",10,true)}" +
+                $"{Check.Format("Trip Count",10,true)}";
             if(ageGroups.Count > 0)
             {
                 foreach(string row in ageGroups)
                 {
+                    string[] splitRow = row.Split(',');
                     TextBlock t = new TextBlock();
-                    t.Text = row;
+                    t.Text = $"{Check.Format(splitRow[0], 17, true)}{Check.Format(splitRow[1], 10, true)}" +
+                        $"{Check.Format(splitRow[2], 15, true)}{Check.Format(splitRow[3],15,true)}" +
+                        $"{Check.Format(splitRow[4],15,true)}{Check.Format(splitRow[5],12,true)}" +
+                        $"{Check.Format(splitRow[6],10,true)}";
                     uxReportList.Items.Add(t);
                 }
             }

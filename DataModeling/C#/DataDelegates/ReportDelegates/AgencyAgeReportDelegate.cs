@@ -23,11 +23,12 @@ namespace DataModeling
 
             while (reader.Read())
             {
-                rows.Add($"{reader.GetString("AgeGroup")}, {reader.GetInt32("Count")}, " +
-                    $"{reader.GetDouble("AverageBudget").ToString("C", CultureInfo.CurrentCulture)}, " +
-                    $"{reader.GetDouble("LowestBudget").ToString("C", CultureInfo.CurrentCulture)} - " +
-                    $"{reader.GetDouble("HighestBudget").ToString("C", CultureInfo.CurrentCulture)}, " +
-                    $"{reader.GetInt32("AverageAge")}, " +
+                rows.Add($"{reader.GetString("AgeGroup")}," +
+                    $"{reader.GetInt32("Count")}," +
+                    $"${string.Format("{0:0.00}",reader.GetDouble("AverageBudget"))}," +
+                    $"${string.Format("{0:0.00}", reader.GetDouble("LowestBudget"))}," +
+                    $"${string.Format("{0:0.00}", reader.GetDouble("HighestBudget"))}," +
+                    $"{reader.GetInt32("AverageAge")}," +
                     $"{reader.GetInt32("TripCount")}");
             }
             return rows;

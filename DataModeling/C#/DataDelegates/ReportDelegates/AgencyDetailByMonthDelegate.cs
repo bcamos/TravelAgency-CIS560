@@ -25,7 +25,7 @@ namespace DataModeling
             {
                 rows.Add($"{reader.GetInt32("Month").ToString()}," +
                     $" {reader.GetInt32("NumberOfTrips")}, " +
-                    $"{reader.GetDouble("AverageTripsPerAgent").ToString()}, " +
+                    $"{reader.GetDouble("AverageTripsPerAgent"):N2}, " +
                     $"{reader.GetDouble("TotalSale").ToString("C", CultureInfo.CurrentCulture)} ");
 
             }
