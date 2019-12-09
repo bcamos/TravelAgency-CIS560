@@ -125,7 +125,7 @@ namespace UserInterface
                 int attractionID = 0;
 
                 //Lookup attraction
-                Attraction attraction = executor.ExecuteReader(new GetAttractionDataDelegate(attractionID));
+                Attraction attraction = executor.ExecuteReader(new GetAttractionByNameDelegate(attractionName, cityID));
 
                 //If attraction does not exist, add
                 if (attraction == null)

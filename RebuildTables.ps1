@@ -80,6 +80,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeli
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Procedures\AttractionsProcedures\Attractions.CreateAttractionTicket.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Procedures\AttractionsProcedures\Attractions.GetAttraction.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Procedures\AttractionsProcedures\Attractions.GetAttractionTicket.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Procedures\AttractionsProcedures\Attractions.GetAttractionByName.sql"
 
 Write-Host "Creating Cars procedures..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DataModeling\Sql\Procedures\CarsProcedures\Cars.CreateCarRental.sql"
