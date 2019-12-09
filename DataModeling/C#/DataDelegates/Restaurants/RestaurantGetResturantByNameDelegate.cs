@@ -23,7 +23,6 @@ namespace DataModeling
 
             command.Parameters.AddWithValue("Name", restaurantName);
             command.Parameters.AddWithValue("CityID", cityID);
-
         }
 
         public override Restaurant Translate(SqlCommand command, IDataRowReader reader)
@@ -31,9 +30,7 @@ namespace DataModeling
             if (!reader.Read())
                 return null;
 
-            return new Restaurant(reader.GetInt32("RestaurantID"),
-               restaurantName, cityID
-               ); 
+            return new Restaurant(reader.GetInt32("RestaurantID"), restaurantName, cityID); 
         }
     }
 }

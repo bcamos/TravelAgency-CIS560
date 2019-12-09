@@ -55,6 +55,7 @@ namespace UserInterface
             uxTrips.Items.Clear();
             LoadAllTrips();
 
+            //Check trip id filter
             if(uxTripID.Text != "")
             {
                 string message = "";
@@ -68,6 +69,7 @@ namespace UserInterface
                 }
             }
 
+            //Check if agent id filter
             if(uxAgentID.Text != "")
             {
                 string message = "";
@@ -81,6 +83,7 @@ namespace UserInterface
                 }
             }
 
+            //Check if customer filter
             if (uxCustomerName.Text != "")
             {
                 FilterByCustomerName(Check.FormatName(uxCustomerName.Text));

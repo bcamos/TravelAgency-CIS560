@@ -10,13 +10,13 @@ namespace DataModeling
     public class AgencyCreateCustomerDelegate : NonQueryDataDelegate<Customer>
     {
         public readonly string name;
-        public readonly float budget;
+        public readonly double budget;
         public readonly int age;
         public readonly string sex;
         public readonly int contactId;
         
 
-        public AgencyCreateCustomerDelegate(string name, float budget, int age, string sex, int contactId)
+        public AgencyCreateCustomerDelegate(string name, double budget, int age, string sex, int contactId)
             : base("Agency.CreateCustomer")
         {
             this.name = name;

@@ -79,10 +79,6 @@ namespace DataModeling.Model
             result.Append("CityID: " + CityID);
 
             return result.ToString();
-
         }
-
-
     }
-
 }

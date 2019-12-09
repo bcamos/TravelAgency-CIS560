@@ -64,12 +64,13 @@ namespace UserInterface
 
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
 
+                //Lookup restaurant
                 Restaurant restaurant = executor.ExecuteReader(new RestaurantsGetRestaurantDelegate(restaurantID));
 
+                //If restaurant exists, autofill info
                 if (restaurant == null)
                 {
                       MessageBox.Show("Restaurant does not already exist");
-
                 }
                 else
                 {
@@ -103,10 +104,15 @@ namespace UserInterface
                 string cityName = Check.FormatName(uxCity.Text);
                 string country = Check.FormatName(uxCountry.Text);
                 string region = Check.FormatName(uxRegion.Text);
+
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
 
                 int cityID = 0;
+
+                //Lookup city
                 City city = executor.ExecuteReader(new LocationGetCityDelegate(cityName, country, region));
+
+                //If city does not exist, add
                 if(city == null)
                 {
                     city = executor.ExecuteNonQuery(new LocationCreateCityDelegate(cityName, region, country));
@@ -115,14 +121,17 @@ namespace UserInterface
 
                 int restaurantID = 0;
 
+                //Lookup restaurant
                 Restaurant restaurant = executor.ExecuteReader(new RestaurantGetResturantByNameDelegate(restaurantName, cityID));
 
+                //If restaurant does not exist, add
                 if(restaurant == null)
                 {
                     restaurant = executor.ExecuteNonQuery(new RestaurantCreateRestaurantDelegate(cityID, cityName));
                 }
                 restaurantID = restaurant.RestaurantID;
 
+                //Add new restaurant reservation
                 RestaurantReservation restaurantReservation = 
                     executor.ExecuteNonQuery(new RestaurantsCreateRestaurantReservationDelegate(tripID, restaurantID, reservationTime));
 

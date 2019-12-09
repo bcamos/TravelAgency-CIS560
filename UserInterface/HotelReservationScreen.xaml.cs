@@ -54,17 +54,17 @@ namespace UserInterface
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
 
                 int hotelID = int.Parse(uxHotelID.Text);
+                
                 // Lookup hotel using hotelID
-
                 Hotel hotel = executor.ExecuteReader(new HotelsGetHotelDelegate(hotelID));
 
+                //If hotel exists, autofill
                 if (hotel == null)
                 {
                     MessageBox.Show("Hotel does not exist");
                 }
                 else
-                {
-                    
+                {                    
                         uxHotelName.Text = hotel.Name;
                         uxHotelAddress.Text = hotel.FullAddress;
 
@@ -97,14 +97,16 @@ namespace UserInterface
                 string region = Check.FormatName(uxRegion.Text);
                 string cityname = Check.FormatName(uxCity.Text);
 
-                float roomPrice = float.Parse(uxRoomPrice.Text);
+                double roomPrice = double.Parse(uxRoomPrice.Text);
                 DateTime checkInDate = (DateTime)uxCheckinDate.SelectedDate;
 
                 int cityID = 0;
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
 
+                //Lookup city
                 City citysearch = executor.ExecuteReader(new LocationGetCityDelegate(cityname, country, region));
 
+                //If city does not exist, add city
                 if (citysearch == null)
                 {
                     City city = executor.ExecuteNonQuery(new LocationCreateCityDelegate(cityname, region, country));
@@ -116,7 +118,11 @@ namespace UserInterface
                 }
                 
                 int hotelID = 0;
+                
+                //Lookup hotel
                 Hotel hotelsearch = executor.ExecuteReader(new HotelsFetchHotelDelegate(hotelName, cityID, address));
+
+                //If hotel does not exist, add hotel
                 if (hotelsearch == null)
                 {
                     Hotel hotel = executor.ExecuteNonQuery(new HotelsCreateHotelDelegate(hotelName, cityID, address));
@@ -127,6 +133,7 @@ namespace UserInterface
                     hotelID = hotelsearch.HotelID;
                 }                
 
+                //Add hotel reservation
                 HotelReservation hr = executor.ExecuteNonQuery(new HotelsCreateHotelReservationDelegate(tripID, hotelID, checkInDate, roomPrice));
 
                 MessageBox.Show("Reservation at " + hotelName + " successfully added");

@@ -14,8 +14,7 @@ namespace DataModeling
 
         public LocationGetCityDelegate(string cityName, string country, string region)
                   : base("Location.GetCitiesByName")
-        {
-            
+        {            
             this.cityName = cityName;
             this.country = country;
             this.region = region;
@@ -35,9 +34,7 @@ namespace DataModeling
             if (!reader.Read())
                 return null;
 
-            return new City(reader.GetInt32("CityID"), cityName, region, country);
-
-           
+            return new City(reader.GetInt32("CityID"), cityName, region, country);           
         }
     }
 }

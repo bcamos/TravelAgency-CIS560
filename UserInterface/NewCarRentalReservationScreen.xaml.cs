@@ -97,11 +97,14 @@ namespace UserInterface
 
                 int cityID = 0;
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
+
+                //Lookup city
                 City city = executor.ExecuteReader(new LocationGetCityDelegate(cityName, country, region));
 
+                //If city does not exist, add
                 if (city == null)
                 {
-                     city = executor.ExecuteNonQuery(new LocationCreateCityDelegate(cityName, region, country));
+                    city = executor.ExecuteNonQuery(new LocationCreateCityDelegate(cityName, region, country));
                     cityID = city.CityID;
                 }
                 else
@@ -110,7 +113,10 @@ namespace UserInterface
                 }
                 int carRentalID = 0;
 
+                //Lookup car rental agency
                 CarRental agency = executor.ExecuteReader(new CarsGetAgencyByNameDelegate(carAgencyName, cityID));
+
+                //If agency does not exist, add
                 if(agency == null)
                 {
                     agency = executor.ExecuteNonQuery(new CarsCreateCarRentalDelegate(carAgencyName, cityID));
@@ -121,6 +127,7 @@ namespace UserInterface
                     carRentalID = agency.CarRentalID;
                 }
 
+                //Add new car rental reservation
                 CarRentalReservation carRentalReservation = executor.ExecuteNonQuery(new CarsCreateCarRentalReservationDelegate
                                                                     (tripID, carRentalID, rentalDate, carModel, rentalPrice));
 

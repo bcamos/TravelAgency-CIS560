@@ -13,10 +13,10 @@ namespace DataModeling
         private int carRentalID ;
         private DateTime rentalDate;
         private string model;
-        private float price;
+        private double price;
 
         public CarsCreateCarRentalReservationDelegate(int tripID, int carRentalID, DateTime rentalDate,
-                                          string model, float price)
+                                          string model, double price)
             : base("Cars.CreateCarRentalReservation")
         {
             this.tripID = tripID;

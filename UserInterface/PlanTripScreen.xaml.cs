@@ -183,16 +183,7 @@ namespace UserInterface
                     t.Text = r.ReservationInfo();
                     uxReservations.Items.Add(t);
                 }
-            }
-
-            // Test code - delete when connected to SQL
-            //for(int i = 1; i < 11; i++)
-            //{
-            //    TextBlock t = new TextBlock();
-            //    t.Text = i + ", ReservationType, Information about reservation...";
-            //    uxReservations.Items.Add(t);
-            //}
-            
+            }          
             RefreshReservationList();
         }
 

@@ -58,16 +58,20 @@ namespace UserInterface
 
             List<string> monthlyDetail = (List<string>)executor.ExecuteReader(new AgencyDetailByMonthDelegate());
 
+            //Set label for columns
             uxReportListLabel.Content = $"{Check.Format(" Year, Month",20,true)}{Check.Format("Trip Count",15,true)}" +
                 $"{Check.Format("Ave. Customers Per Agent",40,true)}{Check.Format("Total Sales",20,true)}";
+
             if (monthlyDetail.Count > 0)
             {
+                //Get each row and format into columns
                 foreach (string row in monthlyDetail)
                 {
                     string[] splitRow = row.Split(',');
                     TextBlock t = new TextBlock();
                     t.Text = $"  {Check.Format(splitRow[0],4,true)}, {Check.Format(splitRow[1],18,true)}{Check.Format(splitRow[2],28,true)}" +
                         $"{Check.Format(splitRow[3],35,true)}{Check.Format(splitRow[4],20,true)}";
+
                     uxReportList.Items.Add(t);
                 }
             }
@@ -85,10 +89,13 @@ namespace UserInterface
 
             List<string> topTenAttractions = (List<string>)executor.ExecuteReader(new AgencyTopTenAttractionsDelegate());
 
+            //Set label for columns
             uxReportListLabel.Content = $"{Check.Format("Attraction",20,false)}{Check.Format("Number of Customers",30,false)}" +
                 $"{Check.Format("City, Country",20,false)}{Check.Format("Ticket Price",20,false)}";
+
             if(topTenAttractions.Count > 0)
             {
+                //Add each row and format into columns
                 foreach(string row in topTenAttractions)
                 {
                     string[] splitRow = row.Split('-');
@@ -113,12 +120,15 @@ namespace UserInterface
 
             List<string> ageGroups = (List<string>)executor.ExecuteReader(new AgencyAgeReportDelegate());
 
+            //Set label for columns
             uxReportListLabel.Content = $"{Check.Format("Age Group", 12, true)}{Check.Format("Customers", 10, true)}" +
                 $"{Check.Format("Ave. Budget", 13, true)}{Check.Format("Low. Budget",13,true)}" +
                 $"{Check.Format("High. Budget",13,true)}{Check.Format("Ave. Age",10,true)}" +
                 $"{Check.Format("Trip Count",10,true)}";
+
             if(ageGroups.Count > 0)
             {
+                //Add each row and format into columns
                 foreach(string row in ageGroups)
                 {
                     string[] splitRow = row.Split(',');
@@ -127,6 +137,7 @@ namespace UserInterface
                         $"{Check.Format(splitRow[2], 15, true)}{Check.Format(splitRow[3],15,true)}" +
                         $"{Check.Format(splitRow[4],15,true)}{Check.Format(splitRow[5],12,true)}" +
                         $"{Check.Format(splitRow[6],10,true)}";
+
                     uxReportList.Items.Add(t);
                 }
             }
@@ -144,17 +155,20 @@ namespace UserInterface
 
             List<string> cheaperOptions = (List<string>)executor.ExecuteReader(new AgencyCheapestOptionsDelegate());
 
+            //Set label for columns
             uxReportListLabel.Content = $"{Check.Format("City, Country", 35, true)}{Check.Format("Cheapest Hotel",30,true)}" +
                 $"{Check.Format("Cheapest Attraction",35,true)}";
 
             if (cheaperOptions.Count > 0)
             {
+                //Add each row and format into columns
                 foreach(string row in cheaperOptions)
                 {
                     string[] splitRow = row.Split('-');
                     TextBlock t = new TextBlock();
                     t.Text = $"{Check.Format(splitRow[0], 35, true)}{Check.Format(splitRow[1],35,true)}" +
                         $"{Check.Format(splitRow[2],35,true)}";
+
                     uxReportList.Items.Add(t);
                 }
             }

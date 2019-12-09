@@ -26,7 +26,6 @@ namespace DataModeling
                     $"{reader.GetInt32("NumberOfCustomers")}-{reader.GetString("CityName")}, " +
                     $"{reader.GetString("Country")}-${string.Format("{0:0.00}", reader.GetDouble("Price"))}");
             }
-
             return rows;
         }
     }

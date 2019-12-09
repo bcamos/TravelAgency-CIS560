@@ -4,16 +4,6 @@ Param(
 )
 
 # This script requires the SQL Server module for PowerShell.
-# The below commands may be required.
-
-# To check whether the module is installed.
-# Get-Module -ListAvailable -Name Sqlps;
-
-# Install the SQL Server Module
-# Install-module -Name SqlServer -Scope CurrentUser
-
-# Import the SQL Server Module.    
-# Import-Module Sqlps -DisableNameChecking;
 
 Write-Host ""
 Write-Host "Rebuilding database Tables $Database on $Server..."

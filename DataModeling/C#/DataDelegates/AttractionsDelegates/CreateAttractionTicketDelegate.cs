@@ -11,9 +11,9 @@ namespace DataModeling
         public readonly int tripID;
         public readonly int attractionID;
         public readonly DateTime ticketdate;
-        public readonly float price;
+        public readonly double price;
 
-        public CreateAttractionTicketDelegate(int tripID, int attractionID, DateTime TicketDate, float Price)
+        public CreateAttractionTicketDelegate(int tripID, int attractionID, DateTime TicketDate, double Price)
             : base("Attractions.CreateAttractionTicket")
         {
             this.tripID = tripID;

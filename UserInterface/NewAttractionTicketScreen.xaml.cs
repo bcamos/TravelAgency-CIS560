@@ -65,14 +65,13 @@ namespace UserInterface
 
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
 
+                //If attraction exists, autofill
                 if (executor.ExecuteReader(new GetAttractionDataDelegate(attractionID)) == null) 
                 {
                     MessageBox.Show("Attraction does not yet exist");
-
                 }
                 else
                 {
-
                     Attraction attraction = executor.ExecuteReader(new GetAttractionDataDelegate(attractionID));
                     City city = executor.ExecuteReader(new LocationGetCityByCityIdDelegate(attraction.CityID));
 
@@ -108,7 +107,11 @@ namespace UserInterface
                 int cityID = 0;
 
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
+
+                //Lookup city
                 City city = executor.ExecuteReader(new LocationGetCityDelegate(country, region, cityName));
+
+                //If city does not exist, add
                 if (city == null)
                 {
                     city = executor.ExecuteNonQuery(new LocationCreateCityDelegate(cityName, region: region, country));
@@ -120,8 +123,11 @@ namespace UserInterface
                 }
 
                 int attractionID = 0;
+
+                //Lookup attraction
                 Attraction attraction = executor.ExecuteReader(new GetAttractionDataDelegate(attractionID));
 
+                //If attraction does not exist, add
                 if (attraction == null)
                 {
                     attraction = executor.ExecuteNonQuery(new CreateAttractionDelegate(attractionName, cityID));
@@ -132,6 +138,7 @@ namespace UserInterface
                     attractionID = attraction.AttractionID;
                 }           
 
+                //Add a new attraction ticket
                 AttractionTicket at = executor.ExecuteNonQuery(new CreateAttractionTicketDelegate(tripID, attractionID, ticketDate, ticketPrice));
 
                 MessageBox.Show("Attraction ticket successfully added for attraction " + attractionName);

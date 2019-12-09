@@ -39,9 +39,7 @@ namespace UserInterface
         public void AddAgent_Click(object sender, RoutedEventArgs args)
         {
             if(CheckValidInputs())
-            {
-                // CONNECT 
-                // Create New Agent
+            {                
                 int agentID = 0;
                 string fullName = Check.FormatName(uxAgentFirstName.Text) + " " + Check.FormatName(uxAgentLastName.Text);
                 float salary = float.Parse(uxSalary.Text);
@@ -49,8 +47,7 @@ namespace UserInterface
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
                 AgencyCreateAgentDelegate createsAgent = new AgencyCreateAgentDelegate(fullName, salary);
                 Agent agent = executor.ExecuteNonQuery(createsAgent);
-                agentID = agent.AgentID;
-                
+                agentID = agent.AgentID;                
 
                 MessageBox.Show("Agent " + fullName + " successfully added. Agent ID = " + agentID);
             }

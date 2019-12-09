@@ -7,7 +7,6 @@ namespace DataModeling
 {
     public class GetFlightDelegate : DataReaderDelegate<Flight>
     {
-        private readonly int FlightID;
         public readonly string AirlineName;
         public readonly System.DateTime DepartureTime;
         public readonly int CityDepartureID;

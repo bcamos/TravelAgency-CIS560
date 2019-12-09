@@ -66,7 +66,10 @@ namespace UserInterface
                 LocationGetCityDelegate getCity = new LocationGetCityDelegate(city, country, region);
                 int cityID = 0;
                 
+                //Lookup city
                 City c = executor.ExecuteReader(getCity);
+
+                //If city does not exist, add
                 if (c == null)
                 {
                     LocationCreateCityDelegate createsCity = new LocationCreateCityDelegate(city, region, country);
@@ -80,9 +83,11 @@ namespace UserInterface
                 int contactID = 0;
                 int customerID = 0;
                 
+                //Create new contact info for customer
                 AgencyCreateContactInfoDelegate saveInfo = new AgencyCreateContactInfoDelegate(address, phone, email, cityID);                
                 ContactInfo contactId = (ContactInfo)executor.ExecuteNonQuery(saveInfo);
                 
+                //Create new customer
                 contactID = contactId.ContactID;
                 AgencyCreateCustomerDelegate cd = new AgencyCreateCustomerDelegate(name, budget, age, sex, contactID);
                 Customer customer = executor.ExecuteNonQuery(cd);

@@ -56,16 +56,21 @@ namespace UserInterface
 
                 Flight flight = executor.ExecuteReader(new RetrieveFlightInfoDelegate(flightID));
 
+                //Check if flight exists; if it does, autofill info
                 if (flight == null)
                 {
                     MessageBox.Show("Flight does not exist");
                 }
                 else
                 {
+                    //Get depature and arrival cities
                     City departurecity = executor.ExecuteReader(new LocationGetCityByCityIdDelegate(flight.CityDepartureID));
                     City arrivalcity = executor.ExecuteReader(new LocationGetCityByCityIdDelegate(flight.CityArrivalID));
 
+                    //Autofill airline
                     uxAirlineName.Text = flight.AirlineName;
+
+                    //Autofill departure info
                     uxDepartureCity.Text = departurecity.CityName;
                     uxDepartureCountry.Text = departurecity.Country;
                     uxDepartureRegion.Text = departurecity.Region;
@@ -73,6 +78,7 @@ namespace UserInterface
                     uxDepartureDate.SelectedDate = new DateTime(flight.DepartureTime.Year, flight.DepartureTime.Month, flight.DepartureTime.Day, 0,0,0);
                     uxDepartureDate.DisplayDate = (DateTime)uxDepartureDate.SelectedDate;
 
+                    //Autofill arrival info
                     uxArrivalCity.Text = arrivalcity.CityName;
                     uxArrivalCountry.Text = arrivalcity.Country;
                     uxArrivalRegion.Text = arrivalcity.Region;
@@ -96,9 +102,11 @@ namespace UserInterface
         {
             if(CheckValidInputs())
             {
+                //Get airline name and price
                 string airlineName = Check.FormatName(uxAirlineName.Text);
                 double boardingPassPrice = double.Parse(uxBoardingPassPrice.Text);
 
+                //Get departure info
                 DateTime departureTime = new DateTime(((DateTime)uxDepartureDate.SelectedDate).Year, ((DateTime)uxDepartureDate.SelectedDate).Month,
                     ((DateTime)uxDepartureDate.SelectedDate).Day, int.Parse(uxDepartureTime.Text.Split(':')[0]),
                     int.Parse(uxDepartureTime.Text.Split(':')[1]), 0);
@@ -106,6 +114,7 @@ namespace UserInterface
                 string departureCountry = Check.FormatName(uxDepartureCountry.Text);
                 string departureRegion = Check.FormatName(uxDepartureRegion.Text);
 
+                //Get arrival info
                 DateTime arrivalTime = new DateTime(((DateTime)uxArrivalDate.SelectedDate).Year, ((DateTime)uxArrivalDate.SelectedDate).Month,
                     ((DateTime)uxArrivalDate.SelectedDate).Day, int.Parse(uxArrivalTime.Text.Split(':')[0]),
                     int.Parse(uxArrivalTime.Text.Split(':')[1]), 0);
@@ -116,8 +125,10 @@ namespace UserInterface
                 int cityDepartureID = 0;
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
 
+                //Lookup departure city
                 City departurecitysearch = executor.ExecuteReader(new LocationGetCityDelegate(departureCity, departureCountry, departureRegion));
                 
+                //If departure city does not exist, add city
                 if (departurecitysearch == null)
                 {
                     City newdeparturecity = executor.ExecuteNonQuery(new LocationCreateCityDelegate(departureCity, departureRegion, departureCountry));
@@ -130,7 +141,10 @@ namespace UserInterface
 
                 int cityArrivalID = 0;
 
+                //Lookup arrival city
                 City arrivalcitysearch = executor.ExecuteReader(new LocationGetCityDelegate(arrivalCity, arrivalCountry, arrivalRegion));
+
+                //If arrival city does not exist, add city
                 if (arrivalcitysearch == null)
                 {
                     City newarrivalcity = executor.ExecuteNonQuery(new LocationCreateCityDelegate(arrivalCity, arrivalRegion, arrivalCountry));
@@ -141,9 +155,13 @@ namespace UserInterface
                 {
                     cityArrivalID = arrivalcitysearch.CityID;
                 }
+
                 int flightID = 0;
 
+                //Lookup flight
                 Flight flightsearch = executor.ExecuteReader(new GetFlightDelegate(airlineName, departureTime, cityDepartureID, arrivalTime, cityArrivalID));
+
+                //If flight does not exist, add flight
                 if (flightsearch == null)
                 {
                     Flight flight = executor.ExecuteNonQuery(new CreateFlightDelegate(airlineName, departureTime, arrivalTime, cityDepartureID, cityArrivalID));
@@ -154,12 +172,18 @@ namespace UserInterface
                     flightID = flightsearch.FlightID;
                 }
 
+                //Create new boarding pass for flight
                 BoardingPass bp = executor.ExecuteNonQuery(new CreateBoardingPassDelegate(tripID, flightID, boardingPassPrice));
 
                 MessageBox.Show("Boarding pass successfully added to flight " + flightID + " with airline " + airlineName);                
             }
         }
 
+        /// <summary>
+        /// Return to the plan trip screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void Done_Click(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new PlanTripScreen(connectionString, tripID, uxArrivalCountry.Text, uxArrivalRegion.Text, uxArrivalCity.Text));

@@ -10,9 +10,9 @@ namespace DataModeling
     public class AgencyCreateAgentDelegate : NonQueryDataDelegate<Agent>
     {
         public readonly string name;
-        public readonly float salary;        
+        public readonly double salary;        
 
-        public AgencyCreateAgentDelegate(string name, float salary)
+        public AgencyCreateAgentDelegate(string name, double salary)
             : base("Agency.CreateAgent")
         {
             this.name = name;

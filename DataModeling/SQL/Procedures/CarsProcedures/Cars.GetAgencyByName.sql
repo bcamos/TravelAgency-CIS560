@@ -5,5 +5,5 @@ AS
 
 SELECT  CC.CarRentalID
 FROM  Cars.CarRental CC 
-where CC.AgencyName = @AgencyName and @CityID = CC.CityID
+WHERE CC.AgencyName = @AgencyName AND @CityID = CC.CityID
 GO

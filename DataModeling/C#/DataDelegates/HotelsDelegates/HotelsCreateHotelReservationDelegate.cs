@@ -10,9 +10,9 @@ namespace DataModeling
         public readonly int tripID;
         public readonly int hotelID;
         public readonly System.DateTime checkindate;
-        public readonly float price;
+        public readonly double price;
 
-        public HotelsCreateHotelReservationDelegate(int tripID, int hotelID, System.DateTime checkInDate, float roomPrice)
+        public HotelsCreateHotelReservationDelegate(int tripID, int hotelID, System.DateTime checkInDate, double roomPrice)
             : base("Hotels.CreateHotelReservation")
         {
             this.tripID = tripID;
