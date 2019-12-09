@@ -22,9 +22,9 @@ namespace DataModeling
 
             while(reader.Read())
             {
-                rows.Add($"{reader.GetInt32("AttractionID")}, {reader.GetString("Name")}, " +
-                    $"{reader.GetInt32("NumberOfCustomers")}, {reader.GetString("CityName")}, " +
-                    $"{reader.GetString("Country")}, {reader.GetDouble("Price").ToString("C", CultureInfo.CurrentCulture)}");
+                rows.Add($"{reader.GetInt32("AttractionID")}-{reader.GetString("Name")}-" +
+                    $"{reader.GetInt32("NumberOfCustomers")}-{reader.GetString("CityName")}, " +
+                    $"{reader.GetString("Country")}-${string.Format("{0:0.00}", reader.GetDouble("Price"))}");
             }
 
             return rows;

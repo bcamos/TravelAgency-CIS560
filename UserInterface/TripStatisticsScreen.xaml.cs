@@ -72,13 +72,17 @@ namespace UserInterface
 
             List<string> topTenAttractions = (List<string>)executor.ExecuteReader(new AgencyTopTenAttractionsDelegate());
 
-            uxReportListLabel.Content = "ID, Attraction, Number of Customers, City, Country, Ticket Price";
+            uxReportListLabel.Content = $"{Check.Format("Attraction",20,false)}{Check.Format("Number of Customers",30,false)}" +
+                $"{Check.Format("City, Country",20,false)}{Check.Format("Ticket Price",20,false)}";
             if(topTenAttractions.Count > 0)
             {
                 foreach(string row in topTenAttractions)
                 {
+                    string[] splitRow = row.Split('-');
                     TextBlock t = new TextBlock();
-                    t.Text = row;
+                    t.Text = $"{Check.Format(splitRow[0],6,false)} {Check.Format(splitRow[1],40,true)}" +
+                        $"{Check.Format(splitRow[2],16,true)}{Check.Format(splitRow[3],32,true)}" +
+                        $"{Check.Format(splitRow[4],20,true)}";
                     uxReportList.Items.Add(t);
                 }
             }
