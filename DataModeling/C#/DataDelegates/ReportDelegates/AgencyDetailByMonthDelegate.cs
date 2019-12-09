@@ -23,11 +23,10 @@ namespace DataModeling
 
             while (reader.Read())
             {
-                rows.Add($"{reader.GetInt32("Month").ToString()}," +
+                rows.Add($"{reader.GetInt32("Year")},{reader.GetInt32("Month").ToString()}," +
                     $" {reader.GetInt32("NumberOfTrips")}," +
                     $"{string.Format("{0:0.00}", reader.GetDouble("AverageTripsPerAgent"))}," +
                     $"${string.Format("{0:0.00}", reader.GetDouble("TotalSale"))}");
-
             }
             return rows;
 

@@ -53,7 +53,7 @@ namespace UserInterface
 
             List<string> monthlyDetail = (List<string>)executor.ExecuteReader(new AgencyDetailByMonthDelegate());
 
-            uxReportListLabel.Content = $"{Check.Format("Month",15,true)}{Check.Format("Trip Count",15,true)}" +
+            uxReportListLabel.Content = $"{Check.Format("Year, Month",20,true)}{Check.Format("Trip Count",15,true)}" +
                 $"{Check.Format("Ave. Customers Per Agent",40,true)}{Check.Format("Total Sales",20,true)}";
             if (monthlyDetail.Count > 0)
             {
@@ -61,8 +61,8 @@ namespace UserInterface
                 {
                     string[] splitRow = row.Split(',');
                     TextBlock t = new TextBlock();
-                    t.Text = $"{Check.Format(splitRow[0],20,true)}{Check.Format(splitRow[1],28,true)}" +
-                        $"{Check.Format(splitRow[2],35,true)}{Check.Format(splitRow[3],20,true)}";
+                    t.Text = $"{Check.Format(splitRow[0],4,true)}, {Check.Format(splitRow[1],20,true)}{Check.Format(splitRow[2],28,true)}" +
+                        $"{Check.Format(splitRow[3],35,true)}{Check.Format(splitRow[4],20,true)}";
                     uxReportList.Items.Add(t);
                 }
             }
