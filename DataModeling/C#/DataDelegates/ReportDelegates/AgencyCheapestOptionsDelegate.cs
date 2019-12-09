@@ -24,9 +24,9 @@ namespace DataModeling
             while(reader.Read())
             {                
                 rows.Add($"{reader.GetString("CityName")}, " + 
-                    $"{reader.GetString("Country")} - {reader.GetString("Hotel")} " +
-                    $"{reader.GetDouble("CheapestHotelPrices").ToString("C", CultureInfo.CurrentCulture)} - {reader.GetString("Attraction")} " +
-                    $"{reader.GetDouble("CheapestAttractionPrices").ToString("C", CultureInfo.CurrentCulture)}");
+                    $"{reader.GetString("Country")}-{reader.GetString("Hotel")} " +
+                    $"${string.Format("{0:0.00}", reader.GetDouble("CheapestHotelPrices"))}-{reader.GetString("Attraction")} " +
+                    $"${string.Format("{0:0.00}", reader.GetDouble("CheapestAttractionPrices"))}");
             }
             return rows;
         }

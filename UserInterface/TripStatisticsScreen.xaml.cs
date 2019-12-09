@@ -122,14 +122,17 @@ namespace UserInterface
 
             List<string> cheaperOptions = (List<string>)executor.ExecuteReader(new AgencyCheapestOptionsDelegate());
 
-            uxReportListLabel.Content = "City, Country - Cheapest Hotel - Cheapest Attraction";
+            uxReportListLabel.Content = $"{Check.Format("City, Country", 35, true)}{Check.Format("Cheapest Hotel",30,true)}" +
+                $"{Check.Format("Cheapest Attraction",35,true)}";
 
             if (cheaperOptions.Count > 0)
             {
                 foreach(string row in cheaperOptions)
                 {
+                    string[] splitRow = row.Split('-');
                     TextBlock t = new TextBlock();
-                    t.Text = row;
+                    t.Text = $"{Check.Format(splitRow[0], 35, true)}{Check.Format(splitRow[1],35,true)}" +
+                        $"{Check.Format(splitRow[2],35,true)}";
                     uxReportList.Items.Add(t);
                 }
             }
