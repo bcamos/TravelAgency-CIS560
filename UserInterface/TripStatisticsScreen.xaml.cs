@@ -45,7 +45,7 @@ namespace UserInterface
             NavigationService.GoBack();
         }
 
-        public void Report1_Click(object sender, RoutedEventArgs args)
+        public void MonthlySalesReport_Click(object sender, RoutedEventArgs args)
         {
 
             uxReportList.Items.Clear();
@@ -65,15 +65,26 @@ namespace UserInterface
             }
         }
 
-        public void Report2_Click(object sender, RoutedEventArgs args)
+        public void TopTenAttractions_Click(object sender, RoutedEventArgs args)
         {
-            // CONNECT
-            // query report 2
-            // load report 2 into uxReportList
-            // set uxReportListLabel of what each column represents
+            uxReportList.Items.Clear();
+            SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
+
+            List<string> topTenAttractions = (List<string>)executor.ExecuteReader(new AgencyTopTenAttractionsDelegate());
+
+            uxReportListLabel.Content = "ID, Attraction, Number of Customers, City, Country, Ticket Price";
+            if(topTenAttractions.Count > 0)
+            {
+                foreach(string row in topTenAttractions)
+                {
+                    TextBlock t = new TextBlock();
+                    t.Text = row;
+                    uxReportList.Items.Add(t);
+                }
+            }
         }
 
-        public void Report3_Click(object sender, RoutedEventArgs args)
+        public void AgeReport_Click(object sender, RoutedEventArgs args)
         {
             uxReportList.Items.Clear();
             SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);

@@ -84,6 +84,7 @@
     <Compile Include="C#\DataDelegates\ReportDelegates\AgencyAgeReportDelegate.cs" />
     <Compile Include="C#\DataDelegates\ReportDelegates\AgencyCheapestOptionsDelegate.cs" />
     <Compile Include="C#\DataDelegates\ReportDelegates\AgencyDetailByMonthDelegate.cs" />
+    <Compile Include="C#\DataDelegates\ReportDelegates\AgencyTopTenAttractionsDelegate.cs" />
     <Compile Include="C#\DataDelegates\Restaurants\RestaurantCreateRestaurantDelegate.cs" />
     <Compile Include="C#\DataDelegates\Restaurants\RestaurantGetResturantByNameDelegate.cs" />
     <Compile Include="C#\DataDelegates\Restaurants\RestaurantsCreateRestaurantReservationDelegate.cs" />
