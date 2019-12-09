@@ -1,6 +1,4 @@
-﻿USE TravelAgency;
-GO
-/*
+﻿/*
 	Report Query: Queries the information of the top 10 attractions which are visited through the agency
 */
 CREATE OR ALTER PROC Agency.TopTenAttractions AS
