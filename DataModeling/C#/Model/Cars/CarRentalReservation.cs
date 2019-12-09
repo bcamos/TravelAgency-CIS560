@@ -52,7 +52,7 @@ namespace DataModeling.Model
 
         public string ReservationInfo()
         {
-            return $"Car Rental Reservation\n\t{ReservationID}, Car Rental Agency {CarRentalID}, Model {Model}, ${Price}, {RentalDate.Date}"; 
+            return $"Car Rental Reservation ${string.Format("{0:0.00}", Price)} - {RentalDate.Date}\n\t{ReservationID}, Car Rental Agency {CarRentalID}, Model {Model}"; 
         }
     }
 }

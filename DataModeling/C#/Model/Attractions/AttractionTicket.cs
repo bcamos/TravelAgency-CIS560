@@ -50,7 +50,7 @@ namespace DataModeling.Model
         /// <returns></returns>
         public string ReservationInfo()
         {
-            return "Attraction Ticket\n\t" + ReservationID + ", Attraction " + AttractionID + ", $" + Price + ", " + TicketDate.Date; 
+            return $"Attraction Ticket ${string.Format("{0:0.00}", Price)} - {TicketDate.Date}\n\t" + ReservationID + ", Attraction " + AttractionID; 
         }
     }
 }

@@ -47,7 +47,7 @@ namespace DataModeling.Model
 
         public string ReservationInfo()
         {
-            return $"Hotel Reservation\n\t{ReservationID}, Hotel {HotelID}, ${Price}, {CheckinDate.Date}";
+            return $"Hotel Reservation ${string.Format("{0:0.00}", Price)} - {CheckinDate.Date}\n\t{ReservationID}, Hotel {HotelID}";
         }
     }
 }

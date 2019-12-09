@@ -45,6 +45,11 @@ namespace UserInterface
             NavigationService.GoBack();
         }
 
+        /// <summary>
+        /// Get a monthly summary report of sales and the avererage customer per agent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void MonthlySalesReport_Click(object sender, RoutedEventArgs args)
         {
 
@@ -68,6 +73,11 @@ namespace UserInterface
             }
         }
 
+        /// <summary>
+        /// Get the top 10 most visited attractions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void TopTenAttractions_Click(object sender, RoutedEventArgs args)
         {
             uxReportList.Items.Clear();
@@ -91,6 +101,11 @@ namespace UserInterface
             }
         }
 
+        /// <summary>
+        /// Get an age group report
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AgeReport_Click(object sender, RoutedEventArgs args)
         {
             uxReportList.Items.Clear();
@@ -118,7 +133,7 @@ namespace UserInterface
         }
 
         /// <summary>
-        /// Cheaper options is the 4th report query which gets displays the cheapest amenities for each city within the database
+        /// Get the cheapest amenities for each city within the database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>

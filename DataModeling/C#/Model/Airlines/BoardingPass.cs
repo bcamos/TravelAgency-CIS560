@@ -43,7 +43,7 @@ namespace DataModeling.Model
 
         public string ReservationInfo()
         {
-            return $"Boarding Pass\n\t {ReservationID}, Flight {FlightID}, ${Price}"; 
+            return $"Boarding Pass ${string.Format("{0:0.00}", Price)}\n\t {ReservationID}, Flight {FlightID}"; 
         }
     }
 }
