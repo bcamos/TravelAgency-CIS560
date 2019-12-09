@@ -2,7 +2,7 @@
 USE TravelAgency;
 GO
 
-INSERT [Location].Cities(CityName,Region,Country) -- 34
+INSERT [Location].Cities(CityName,Region,Country) -- 100
 VALUES ('Kansas City','Missouri','United States'),('New York City','New York','United States'),
 ('Los Angeles','California','United States'),('Dublin','Dublin','Ireland'),
 ('London','London','United Kingdom'),('Paris','Paris','France'),
@@ -20,4 +20,37 @@ VALUES ('Kansas City','Missouri','United States'),('New York City','New York','U
 ('Honolulu','Hawaii','United States'),('Denver','Colorado','United States'),
 ('Toronto','Ontario','Canada'),('Philadelphia','Pennsylvania','United States'),
 ('Miami','Florida','United States'),('Houston','Texas','United States'),
-('Zurich','Zurich','Switzerland'),('Venice','Venice','Italy');
+('Zurich','Zurich','Switzerland'),('Venice','Venice','Italy'), 
+('Dallas','Texas', 'United States'),('Austin','Texas','United States'), 
+('San Antonio','Texas','United States'),('Manhattan','Kansas','United States'),
+('Saint Louis','Missouri','United States'),('Chicago','Illinois','United States'),
+('Indianapolis','Indiana','United States'),('Cincinnati','Ohio','United States'),
+('Columbus','Ohio','United States'),('Pittsburgh','Pennsylvania','United States'),
+('Washington DC','District of Columbia','United States'),('Richmond','Virginia','United States'),
+('Atlanta','Georgia','United States'),('Jacksonville','Florida','United States'),
+('Nashville','Tennessee','United States'),('Louisville','Kentucky','United States'),
+('New Orleans','Louisiana','United States'),('Detroit','Michigan','United States'),
+('Minneapolis','Minnesota','United States'),('Omaha','Nebraska','United States'),
+('Colorado Springs','Colorado','United States'),('Overland Park','Kansas','United States'),
+('Olathe','Kansas','United States'),('Wichita','Kansas','United States'),
+('Albuquerque','New Mexico','United States'),('Phoenix','Arizona','United States'),
+('San Diego','California','United States'),('Sacramento','California','United States'),
+('Portland','Oregon','United States'),('Vancouver','British Columbia','Canada'),
+('Anchorage','Alaska','United States'),('Panama City','Panama City', 'Panama'),
+('Sao Paulo','State of Sao Paulo','Brazil'),('Rome','Rome','Italy'),
+('Naples','Naples','Italy'),('Palermo','Sicily','Italy'),
+('Marseille','Marseille','France'),('Nice','Nice','France'),
+('Bern','Bern','Switzerland'),('Munich','Bavaria','Germany'),
+('Salzburg','Salzburg','Austria'),('Prague','Prague','Czechia'),
+('Leipzig','Leipzig','Germany'),('Dresden','Saxony','Germany'),
+('Amsterdam','Amsterdam','Netherlands'),('Bath','Bath','United Kingdom'),
+('Cardiff','Wales','United Kingdom'),('Liverpool','Liverpool','United Kingdom'),
+('Manchester','Manchester','United Kingdom'),('Cambridge','Cambridge','United Kingdom'),
+('Edinburgh','Scotland','United Kingdom'),('Glasgow','Scotland','United Kingdom'),
+('Luxembourg','Luxembourg','Luxembourg'),('Hamburg','Hamburg','Germany'),
+('Copenhagen','Copenhagen','Denmark'),('Stockholm','Stockholm','Sweden'),
+('Vilnius','Vilnius','Lithuania'),('Minsk','Minsk','Belarus'),
+('Kyiv','Kyiv','Ukraine'),('Istanbul','Istanbul','Turkey'),
+('Anakara','Anakara','Turkey'),('Osaka','Osaka','Japan'),
+('Bangkok','Bangkok','Thailand'),('Barcelona','Barcelona','Spain'),
+('Tangier','Tangier','Morocco'),('Florence','Florence','Italy');
