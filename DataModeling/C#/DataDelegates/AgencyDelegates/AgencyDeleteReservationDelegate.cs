@@ -10,6 +10,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for deleting a reservation
+    /// </summary>
     public class AgencyDeleteReservationDelegate : DataDelegate
     {
         private readonly int reservationID;

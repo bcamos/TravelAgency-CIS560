@@ -7,6 +7,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new car rental reservation
+    /// </summary>
     public class CarsCreateCarRentalReservationDelegate : NonQueryDataDelegate<CarRentalReservation>
     {
         private int tripID;

@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting a city given all info except its id
+    /// </summary>
     public class LocationGetCityDelegate : DataReaderDelegate<City>
     {
         private readonly int cityID;

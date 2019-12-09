@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Hotels.CreateHotelReservation
+﻿/*
+	Creates a new hotel reservation
+*/
+CREATE OR ALTER PROCEDURE Hotels.CreateHotelReservation
 	@ReservationID INT OUTPUT,
 	@HotelID INT,
 	@CheckinDate DATE,

@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting all customers
+    /// </summary>
     public class AgencyGetCustomersDelegate : DataReaderDelegate<IReadOnlyList<Customer>>
     {
         public AgencyGetCustomersDelegate()

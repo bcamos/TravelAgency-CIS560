@@ -10,6 +10,9 @@ using System.Globalization;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for cheapest options report
+    /// </summary>
     public class AgencyCheapestOptionsDelegate : DataReaderDelegate<IReadOnlyList<string>>
     {
         public AgencyCheapestOptionsDelegate() : base("Agency.CheapestOptions")

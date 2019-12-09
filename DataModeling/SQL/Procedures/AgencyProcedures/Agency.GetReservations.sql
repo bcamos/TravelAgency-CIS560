@@ -1,3 +1,6 @@
+/*
+	Gets all reservations of a particular trip
+*/
 CREATE OR ALTER PROCEDURE Agency.GetReservations
 	@TripID INT
 AS

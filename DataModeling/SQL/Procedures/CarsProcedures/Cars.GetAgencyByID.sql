@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Cars.GetAgencyByID
+﻿/*
+	Gets a car agency given its id
+*/
+CREATE OR ALTER PROCEDURE Cars.GetAgencyByID
 	@CarRentalID INT
 AS
 

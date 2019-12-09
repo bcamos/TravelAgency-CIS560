@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new attraction
+    /// </summary>
     public class CreateAttractionDelegate : NonQueryDataDelegate<Attraction>
     {
         public readonly string name;

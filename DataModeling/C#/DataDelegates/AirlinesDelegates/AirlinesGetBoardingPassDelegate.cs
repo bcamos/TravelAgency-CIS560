@@ -10,6 +10,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting a boarding pass given its id
+    /// </summary>
     public class AirlinesGetBoardingPassDelegate : DataReaderDelegate<BoardingPass>
     {
         private readonly int reservationID;

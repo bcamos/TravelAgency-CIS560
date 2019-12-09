@@ -5,12 +5,15 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
-    public class RestaurantCreateRestaurantDelegate : NonQueryDataDelegate<Restaurant>
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new restaurant
+    /// </summary>
+    public class RestaurantsCreateRestaurantDelegate : NonQueryDataDelegate<Restaurant>
     {
         public readonly int cityID;
         public readonly string restName;
 
-        public RestaurantCreateRestaurantDelegate(int  cityID, string restName)
+        public RestaurantsCreateRestaurantDelegate(int  cityID, string restName)
             : base("Restaurants.CreateRestaurant")
         {
             this.cityID = cityID;

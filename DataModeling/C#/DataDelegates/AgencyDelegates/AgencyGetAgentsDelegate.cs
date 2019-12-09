@@ -6,6 +6,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to the SQL procedure for getting all agents
+    /// </summary>
     public class AgencyGetAgentsDelegate : DataReaderDelegate<IReadOnlyList<Agent>>
     {
         public AgencyGetAgentsDelegate()

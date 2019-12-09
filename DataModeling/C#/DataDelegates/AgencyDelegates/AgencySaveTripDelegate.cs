@@ -5,6 +5,9 @@ using System;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for updating an existing trip, or inserting a new one if does not exist
+    /// </summary>
     public class AgencySaveTripDelegate : DataDelegate
     {
         private readonly int tripID;

@@ -10,6 +10,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting a trip given its id
+    /// </summary>
     public class AgencyFetchTripDelegate : DataReaderDelegate<Trip>
     {
         private readonly int tripID;

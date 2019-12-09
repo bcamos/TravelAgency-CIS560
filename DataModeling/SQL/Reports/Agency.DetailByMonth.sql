@@ -1,3 +1,6 @@
+/*
+	Report Query: Provides a summary of each month, querying the average customers per agent, and the total sales
+*/
 CREATE OR ALTER PROC Agency.DetailByMonth
 AS
 SELECT

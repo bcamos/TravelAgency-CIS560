@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurantReservation
+﻿/*
+	Creates a new restaurant reservation
+*/
+CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurantReservation
  @ReservationID INT OUTPUT,
  @TripID INT,
  @ReservationDate DATE, 

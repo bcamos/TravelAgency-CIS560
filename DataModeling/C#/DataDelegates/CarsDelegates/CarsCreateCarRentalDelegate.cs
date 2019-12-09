@@ -7,6 +7,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure creating a new car rental agency
+    /// </summary>
     public class CarsCreateCarRentalDelegate : NonQueryDataDelegate<CarRental>
     {
         public readonly string AgencyName;

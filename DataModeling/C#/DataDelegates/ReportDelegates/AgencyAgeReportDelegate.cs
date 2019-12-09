@@ -10,6 +10,9 @@ using System.Globalization;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for age report
+    /// </summary>
     public class AgencyAgeReportDelegate : DataReaderDelegate<IReadOnlyList<string>>
     {
         public AgencyAgeReportDelegate() : base("Agency.AgeReport")

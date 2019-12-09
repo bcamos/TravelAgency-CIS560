@@ -9,6 +9,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting all trips
+    /// </summary>
     public class AgencyGetTripsDelegate : DataReaderDelegate<IReadOnlyList<Trip>>
     {
         public AgencyGetTripsDelegate() : base("Agency.GetTrips")

@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Location.GetCitiesByName
+﻿/*
+	Gets a city given all information except its id
+*/
+CREATE OR ALTER PROCEDURE Location.GetCitiesByName
 	@CityName NVARCHAR(120),
 	@Region  NVARCHAR(120),
 	@Country NVARCHAR(120)

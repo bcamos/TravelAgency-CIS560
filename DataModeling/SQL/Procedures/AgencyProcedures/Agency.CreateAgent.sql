@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Agency.CreateAgent
+﻿/*
+	Creates a new agent
+*/
+CREATE OR ALTER PROCEDURE Agency.CreateAgent
 	@AgentID INT OUTPUT,
 	@Name NVARCHAR(100),
 	@Salary FLOAT

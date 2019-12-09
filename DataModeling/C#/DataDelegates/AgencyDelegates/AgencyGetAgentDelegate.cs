@@ -9,6 +9,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to the SQL procedure for getting an agent given their id
+    /// </summary>
     public class AgencyGetAgentDelegate : DataReaderDelegate<Agent>
     {
         private readonly int agentID;

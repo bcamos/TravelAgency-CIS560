@@ -49,11 +49,8 @@
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyGetCustomerDelegate.cs" />
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyGetCustomersDelegate.cs" />
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyGetReservationsDelegate.cs" />
-    <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyGetTripDelegate.cs" />
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyGetTripsDelegate.cs" />
-    <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyRetrieveAgentTripsDelegate.cs" />
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyRetrieveCustomerContactInfoDelegate.cs" />
-    <Compile Include="C#\DataDelegates\AgencyDelegates\AgencySaveCustomerContactInfoDelegate.cs" />
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencySaveTripDelegate.cs" />
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyCreateAgentDelegate.cs" />
     <Compile Include="C#\DataDelegates\AgencyDelegates\AgencyCreateReservationDelegate.cs" />
@@ -70,7 +67,6 @@
     <Compile Include="C#\DataDelegates\CarsDelegates\CarsCreateCarRentalDelegate.cs" />
     <Compile Include="C#\DataDelegates\CarsDelegates\CarsGetAgencyByIDDelegate.cs" />
     <Compile Include="C#\DataDelegates\CarsDelegates\CarsGetAgencyByNameDelegate.cs" />
-    <Compile Include="C#\DataDelegates\CarsDelegates\CarsGetAgencyNameDelegate.cs" />
     <Compile Include="C#\DataDelegates\CarsDelegates\CarsGetCarReservationInfo.cs" />
     <Compile Include="C#\DataDelegates\HotelsDelegates\HotelsCreateHotelDelegate.cs" />
     <Compile Include="C#\DataDelegates\HotelsDelegates\HotelsCreateHotelReservationDelegate.cs" />
@@ -78,15 +74,14 @@
     <Compile Include="C#\DataDelegates\HotelsDelegates\HotelsGetHotelDelegate.cs" />
     <Compile Include="C#\DataDelegates\HotelsDelegates\HotelsGetHotelReservationDelegate.cs" />
     <Compile Include="C#\DataDelegates\LocationDelegates\LocationCreateCityDelegate.cs" />
-    <Compile Include="C#\DataDelegates\LocationDelegates\LocationFetchCityDelegate.cs" />
     <Compile Include="C#\DataDelegates\LocationDelegates\LocationGetCityByCityIdDelegate.cs" />
     <Compile Include="C#\DataDelegates\LocationDelegates\LocationGetCityDelegate.cs" />
     <Compile Include="C#\DataDelegates\ReportDelegates\AgencyAgeReportDelegate.cs" />
     <Compile Include="C#\DataDelegates\ReportDelegates\AgencyCheapestOptionsDelegate.cs" />
     <Compile Include="C#\DataDelegates\ReportDelegates\AgencyDetailByMonthDelegate.cs" />
     <Compile Include="C#\DataDelegates\ReportDelegates\AgencyTopTenAttractionsDelegate.cs" />
-    <Compile Include="C#\DataDelegates\Restaurants\RestaurantCreateRestaurantDelegate.cs" />
-    <Compile Include="C#\DataDelegates\Restaurants\RestaurantGetResturantByNameDelegate.cs" />
+    <Compile Include="C#\DataDelegates\Restaurants\RestaurantsCreateRestaurantDelegate.cs" />
+    <Compile Include="C#\DataDelegates\Restaurants\RestaurantsGetResturantByNameDelegate.cs" />
     <Compile Include="C#\DataDelegates\Restaurants\RestaurantsCreateRestaurantReservationDelegate.cs" />
     <Compile Include="C#\DataDelegates\Restaurants\RestaurantsGetRestaurantDelegate.cs" />
     <Compile Include="C#\DataDelegates\Restaurants\RestaurantsGetRestaurantReservationDelegate.cs" />

@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Agency.SaveTrip
+﻿/*
+	Given information about a trip, it updates that information if matched, if not, it creates a new trip
+*/
+CREATE OR ALTER PROCEDURE Agency.SaveTrip
    @TripID INT,
    @CustomerID INT,
    @IsDeleted BIT,

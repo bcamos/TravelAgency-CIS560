@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Cars.CreateCarRentalReservation
+﻿/*
+	Creates a new car rental reservation
+*/
+CREATE OR ALTER PROCEDURE Cars.CreateCarRentalReservation
 	@ReservationID INT OUTPUT,
 	@TripID INT,
 	@CarRentalID INT,

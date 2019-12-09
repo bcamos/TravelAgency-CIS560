@@ -6,7 +6,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
-
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating new contact information
+    /// </summary>
     public class AgencyCreateContactInfoDelegate : NonQueryDataDelegate<ContactInfo>
     {
         public readonly string billingAddress;

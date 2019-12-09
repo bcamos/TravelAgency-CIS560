@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Agency.CreateContactInfo
+﻿/*
+	Creates a new contact information given the necessary information
+*/
+CREATE OR ALTER PROCEDURE Agency.CreateContactInfo
    @BillingAddress NVARCHAR(200),
    @Phone NVARCHAR(30),
    @Email NVARCHAR(50),

@@ -9,6 +9,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting all reservations of a particular trip
+    /// </summary>
     public class AgencyGetReservationsDelegate : DataReaderDelegate<IReadOnlyList<Reservation>>
     {
         private int tripID;

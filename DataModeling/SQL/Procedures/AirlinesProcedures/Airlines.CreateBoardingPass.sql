@@ -1,5 +1,6 @@
-USE TravelAgency;
-GO
+/*
+	Creates a new boarding pass
+*/
 CREATE OR ALTER PROCEDURE Airlines.CreateBoardingPass
 	@ReservationID INT OUTPUT,
 	@TripID INT,

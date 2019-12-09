@@ -6,6 +6,9 @@ using System;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating an a super class reservation
+    /// </summary>
     public class AgencyCreateReservationDelegate : NonQueryDataDelegate<Reservation>
     {                       
         public readonly int tripID;

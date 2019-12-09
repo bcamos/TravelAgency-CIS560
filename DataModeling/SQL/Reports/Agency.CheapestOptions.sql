@@ -1,3 +1,6 @@
+/*
+	Report query: Provides a summary of the cheapest options of hotels and attractions for each city
+*/
 CREATE OR ALTER PROC Agency.CheapestOptions
 AS
 WITH HotelInfo(CityID, [Name], Price) AS

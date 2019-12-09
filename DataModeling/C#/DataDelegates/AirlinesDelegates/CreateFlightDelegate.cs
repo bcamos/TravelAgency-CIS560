@@ -6,6 +6,9 @@ using System;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new flight
+    /// </summary>
     public class CreateFlightDelegate : NonQueryDataDelegate<Flight>
     {
         public readonly int flightID;

@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new city
+    /// </summary>
     public class LocationCreateCityDelegate : NonQueryDataDelegate<City>
     {
         public readonly int cityID;

@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new hotel
+    /// </summary>
     public class HotelsCreateHotelDelegate : NonQueryDataDelegate<Hotel>
     {
         public readonly int hotelID;

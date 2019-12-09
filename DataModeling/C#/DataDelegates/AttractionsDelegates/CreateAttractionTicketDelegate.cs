@@ -6,6 +6,9 @@ using System;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new attraction ticket
+    /// </summary>
     public class CreateAttractionTicketDelegate : NonQueryDataDelegate<AttractionTicket>
     {
         public readonly int tripID;

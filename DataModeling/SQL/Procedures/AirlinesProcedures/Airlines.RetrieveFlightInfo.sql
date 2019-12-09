@@ -1,3 +1,6 @@
+/*
+	Gets a particular flight givent the flight id
+*/
 CREATE OR ALTER PROCEDURE Airlines.RetrieveFlightInfo
 	@FlightID INT
 AS

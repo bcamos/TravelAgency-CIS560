@@ -7,6 +7,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides funtionality for connecting to SQL procedure for getting a customer given their id
+    /// </summary>
     public class AgencyGetCustomerDelegate : DataReaderDelegate<Customer>
     {
         private readonly int customerID;

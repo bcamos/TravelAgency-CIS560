@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting a flight given all info except flightID
+    /// </summary>
     public class GetFlightDelegate : DataReaderDelegate<Flight>
     {
         public readonly string AirlineName;

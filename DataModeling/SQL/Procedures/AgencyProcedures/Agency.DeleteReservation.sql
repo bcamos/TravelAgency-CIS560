@@ -1,3 +1,6 @@
+/*
+	Sets the isDeleted column to 1 (true) for a particular reservation
+*/
 CREATE OR ALTER PROCEDURE Agency.DeleteReservation
 	@ReservationID INT
 AS

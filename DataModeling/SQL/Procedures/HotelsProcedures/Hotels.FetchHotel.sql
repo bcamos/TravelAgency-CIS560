@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Hotels.FetchHotel
+﻿/*
+	Gets a hotel given all information except its id
+*/
+CREATE OR ALTER PROCEDURE Hotels.FetchHotel
 	@Name NVARCHAR(120),
 	@CityID INT,
 	@FullAddress NVARCHAR(200)

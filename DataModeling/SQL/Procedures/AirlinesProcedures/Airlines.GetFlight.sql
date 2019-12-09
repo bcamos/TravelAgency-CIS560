@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Airlines.GetFlight
+﻿/*
+	Gets a flight given all information except the id
+*/
+CREATE OR ALTER PROCEDURE Airlines.GetFlight
 	@AirlineName NVARCHAR(120),
 	@DepartureTime DATETIME,
 	@ArrivalTime DATETIME,

@@ -5,12 +5,15 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
-   public class RestaurantGetResturantByNameDelegate : DataReaderDelegate<Restaurant>
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting a restaurant given all info except its id
+    /// </summary>
+    public class RestaurantsGetResturantByNameDelegate : DataReaderDelegate<Restaurant>
     {
         private readonly int cityID;
         private readonly string restaurantName;
 
-        public RestaurantGetResturantByNameDelegate(string restaurantName, int cityID)
+        public RestaurantsGetResturantByNameDelegate(string restaurantName, int cityID)
            : base("Restaurants.GetRestaurantByName")
         {
             this.restaurantName = restaurantName;

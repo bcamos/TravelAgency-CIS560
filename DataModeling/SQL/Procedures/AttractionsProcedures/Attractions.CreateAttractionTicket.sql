@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Attractions.CreateAttractionTicket
+﻿/*
+	Creates a new attraction ticket
+*/
+CREATE OR ALTER PROCEDURE Attractions.CreateAttractionTicket
 	@ReservationID INT OUTPUT,
 	@TripID INT,
 	@AttractionID INT,

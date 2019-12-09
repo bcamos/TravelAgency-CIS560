@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Cars.GetAgencyByName
+﻿/*
+	Gets a car agency given all information except its id
+*/
+CREATE OR ALTER PROCEDURE Cars.GetAgencyByName
 	@AgencyName NVARCHAR(120),
 	@CityID  int
 AS

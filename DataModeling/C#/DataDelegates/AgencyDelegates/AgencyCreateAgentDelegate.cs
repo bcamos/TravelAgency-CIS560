@@ -6,7 +6,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
-    
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure to create a new agent
+    /// </summary>
     public class AgencyCreateAgentDelegate : NonQueryDataDelegate<Agent>
     {
         public readonly string name;

@@ -9,6 +9,9 @@ using System.Globalization;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for top ten attractions report
+    /// </summary>
     public class AgencyTopTenAttractionsDelegate : DataReaderDelegate<IReadOnlyList<string>>
     {
         public AgencyTopTenAttractionsDelegate() : base("Agency.TopTenAttractions")

@@ -6,7 +6,9 @@ using System.Data.SqlClient;
 
 namespace DataModeling
 {
-
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new customer
+    /// </summary>
     public class AgencyCreateCustomerDelegate : NonQueryDataDelegate<Customer>
     {
         public readonly string name;

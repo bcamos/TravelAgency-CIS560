@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new boarding pass
+    /// </summary>
     public class CreateBoardingPassDelegate : NonQueryDataDelegate<BoardingPass>
     {
         public readonly int tripID;

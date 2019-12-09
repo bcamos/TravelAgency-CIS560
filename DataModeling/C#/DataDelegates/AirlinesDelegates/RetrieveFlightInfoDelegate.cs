@@ -5,6 +5,9 @@ using DataModeling.Model;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for getting a flight given its ID
+    /// </summary>
     public class RetrieveFlightInfoDelegate : DataReaderDelegate<Flight>
     {
         private readonly int flightID;

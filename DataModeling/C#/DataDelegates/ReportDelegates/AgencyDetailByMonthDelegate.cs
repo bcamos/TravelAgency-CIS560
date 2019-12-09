@@ -10,6 +10,9 @@ using System.Globalization;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for monthly report
+    /// </summary>
     public class AgencyDetailByMonthDelegate : DataReaderDelegate<IReadOnlyList<string>>
     {
         public AgencyDetailByMonthDelegate() : base("Agency.DetailByMonth")

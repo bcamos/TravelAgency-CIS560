@@ -10,6 +10,9 @@ using System.Data;
 
 namespace DataModeling
 {
+    /// <summary>
+    /// Provides functionality for connecting to SQL procedure for creating a new trip
+    /// </summary>
     public class AgencyCreateTripDelegate : NonQueryDataDelegate<Trip>
     {
         private readonly int customerID;

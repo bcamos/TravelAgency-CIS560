@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Agency.CreateTrip
+﻿/*
+	Creates a new trip given the necessary information
+*/
+CREATE OR ALTER PROCEDURE Agency.CreateTrip
 	@TripID INT OUTPUT,
 	@DateCreated DATETIMEOFFSET OUTPUT,
 	@CustomerID INT,

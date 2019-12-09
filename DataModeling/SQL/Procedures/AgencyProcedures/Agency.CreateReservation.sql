@@ -1,5 +1,6 @@
-﻿USE TravelAgency;
-GO
+﻿/*
+	Creates a new super class reservation given the necessary information
+*/
 CREATE OR ALTER PROCEDURE Agency.CreateReservation
 	@ReservationID INT OUTPUT,
 	@DateCreated DATETIMEOFFSET OUTPUT,

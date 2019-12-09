@@ -122,12 +122,12 @@ namespace UserInterface
                 int restaurantID = 0;
 
                 //Lookup restaurant
-                Restaurant restaurant = executor.ExecuteReader(new RestaurantGetResturantByNameDelegate(restaurantName, cityID));
+                Restaurant restaurant = executor.ExecuteReader(new RestaurantsGetResturantByNameDelegate(restaurantName, cityID));
 
                 //If restaurant does not exist, add
                 if(restaurant == null)
                 {
-                    restaurant = executor.ExecuteNonQuery(new RestaurantCreateRestaurantDelegate(cityID, cityName));
+                    restaurant = executor.ExecuteNonQuery(new RestaurantsCreateRestaurantDelegate(cityID, cityName));
                 }
                 restaurantID = restaurant.RestaurantID;
 
