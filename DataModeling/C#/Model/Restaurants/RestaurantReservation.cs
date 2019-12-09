@@ -43,7 +43,7 @@ namespace DataModeling.Model
         /// <returns></returns>
         public string ReservationInfo()
         {
-            return $"Restaurant Reservation - {ReservationDate}\n\t {ReservationID}, Restaurant {ReservationID}"; 
+            return $"Restaurant Reservation - {ReservationDate}\n\t {ReservationID}, Restaurant {RestaurantID}"; 
         }
     }
 }

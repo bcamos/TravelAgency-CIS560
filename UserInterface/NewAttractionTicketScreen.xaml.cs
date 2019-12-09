@@ -109,12 +109,12 @@ namespace UserInterface
                 SqlCommandExecutor executor = new SqlCommandExecutor(connectionString);
 
                 //Lookup city
-                City city = executor.ExecuteReader(new LocationGetCityDelegate(country, region, cityName));
+                City city = executor.ExecuteReader(new LocationGetCityDelegate(cityName, country, region));
 
                 //If city does not exist, add
                 if (city == null)
                 {
-                    city = executor.ExecuteNonQuery(new LocationCreateCityDelegate(cityName, region: region, country));
+                    city = executor.ExecuteNonQuery(new LocationCreateCityDelegate(cityName, region, country));
                     cityID = city.CityID;
                 }
                 else

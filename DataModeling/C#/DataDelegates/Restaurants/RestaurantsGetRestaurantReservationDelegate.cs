@@ -32,7 +32,7 @@ namespace DataModeling
 
             return new RestaurantReservation(reader.GetInt32("ReservationID"),
                reader.GetDateTime("ReservationDate"),
-               reservationID);
+               reader.GetInt32("RestaurantID"));
         }
     }
 }
